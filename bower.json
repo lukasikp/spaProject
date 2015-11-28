@@ -1,0 +1,16 @@
+{
+  "name": "projektFRONT",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "lukasikp <lukasik.paulina@gmail.com>"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/lukasikp/gulpApp",
+  "moduleType": [
+    "node"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

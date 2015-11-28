@@ -1,0 +1,1107 @@
+//*****************************************************************************************************
+//*****************************************************************************************************
+//***************GIRD***********************************************************************
+//*****************************************************************************************************
+
+/////////////////
+// Semantic.gs // for LESS: http://lesscss.org/
+/////////////////
+
+// Defaults which you can freely override
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: @gridsystem-width;
+
+// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+// @min-width: 960;
+// @correction: 0.5 / @min-width * 100 * 1%;
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+	*zoom:1;
+	
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
+	}
+	&:after {
+	    clear:both;
+	}
+}
+
+
+//////////
+// GRID //
+//////////
+
+body {
+	width: 100%;
+	.clearfix;
+}
+
+.row(@columns:@columns) {
+	display: block;
+	width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
+	margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+	// *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
+	// *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
+	.clearfix;
+}
+.column(@x,@columns:@columns) {
+	display: inline;
+	float: left;
+	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+	margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
+	// *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
+	// *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
+}
+.push(@offset:1) {
+	margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+.pull(@offset:1) {
+	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+
+
+//*****************************************************************************************************
+//*****************************************************************************************************
+//***************COLORS***********************************************************************
+//*****************************************************************************************************
+
+// Kolory dla tekstu
+@basic-text-color: #888;
+@basic-header-color: #434343;
+@bright-text-color: #D4D4D4;
+@brightest-text-color: #FFF;
+@menu-link-color: #3A3C43;
+
+// Kolor akcentu
+@accent-color: #FF8040;
+
+// Ramki
+@basic-border-color: #DDD;
+
+// Boxy portfolio
+@box-portfolio-background: fade(@accent-color,85%);
+
+// Kolory tła
+@basic-background: #FFF;
+@alternate-background: #EEE;
+@footer-background: #43444D;
+@footer-copyright-background: #31323A;
+
+// Stopka
+@footer-social-borders: #535353;
+@footer-social-icons: #EBEBEB;
+@footer-post-date: #B4B4B4;
+
+// Slider
+@slider-control-background: #C2C2C2;
+
+// Opinie
+@opinions-text: #A6A6A6;
+
+
+
+//*****************************************************************************************************
+//*****************************************************************************************************
+//***************HELPERS***********************************************************************
+//*****************************************************************************************************
+
+
+@phone: ~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (min-width: 992px)";
+@desktop: ~"only screen and (min-width: 1200px)";
+
+
+// Wyrownanie, pozycjowanie
+.center-text {
+	text-align: center;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-none {
+	float: none;
+}
+
+.center-no-float {
+	.float-none;
+	.center-text;
+}
+
+.no-center-float {
+	.float-left;
+	text-align: initial;
+}
+
+// wyrowanie w pionie
+.center-vertical {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// Widocznosc
+.invisible {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+} 
+
+.block {
+	display: block;
+}
+
+// rozmiary
+.absolute-one-hundred-size {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.size(@width;@height) {
+	width: @width;
+	height: @height;
+}
+
+// Listy
+.list-style-none {
+	list-style-type: none;
+}
+
+// Ramki
+.section-border-top(@border-color: @basic-border-color) {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: @border-color;
+}
+
+.section-border-bottom(@border-color: @basic-border-color) {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: @border-color;
+}
+
+// Elementy plywajace
+.overflow-fix  {
+	overflow: auto;
+}
+
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// ukrywanie
+.hide {
+	opacity: 0;
+}
+
+.show {
+	opacity: 1;
+}
+
+// narozniki
+.border-radius-single(@radius) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+
+// podstawowe przejscie 0.2s
+.basic-transition {
+	transition: all 0.2s ease-in-out;
+}
+
+// Zmienne przjscie
+.variable-transition(@length) {
+	transition: all @length ease-in-out;
+}
+
+// Translate 3D
+.translate3d(@move-x;@move-y;@move-z) {
+	transform: translateX(@move-x);
+	transform: translateY(@move-y);
+	transform: translateZ(@move-z);
+}
+
+//Nakladka
+.dark-overlay {
+	content: "";
+	z-index: 0;
+	.absolute-one-hundred-size;
+	background: none repeat 0 0 rgba(30, 30, 30, 0.5);
+}
+
+
+
+
+
+//*****************************************************************************************************
+//*****************************************************************************************************
+//***************TYPOGRAPHY***********************************************************************
+//*****************************************************************************************************
+// zmienne tekst
+@basic-font-size: 13px;
+@basic-line-height: 24px;
+@paragraph-margin: 0 0 15px;
+
+// Mixin naglowki
+.header-mixin(@header-font-size;@header-margin-bottom;@header-color: @basic-header-color) {
+	font-size: @header-font-size;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: @header-margin-bottom;
+	color: @header-color;
+	font-weight: 400;
+}
+
+// font font
+@font-family-primary: "Open Sans", sans-serif;
+@font-family-secondary: "Lato", sans-serif;
+
+
+// style tekstu
+body {
+	font-size: @basic-font-size;
+	font-family: @font-family-primary;
+	color: @basic-text-color;
+}
+
+p {
+	margin: @paragraph-margin;
+	line-height: @basic-line-height;
+}
+
+h2 {
+	.header-mixin(24px;12px);
+}
+
+h3 {
+	.header-mixin(18px;18px);
+}
+
+
+
+
+
+//*****************************************************************************************************
+//*****************************************************************************************************
+//***************STYLES***********************************************************************
+//*****************************************************************************************************
+
+// siatka kolumn
+@columns: 12;
+@column-width: 65;
+@gutter-width: 30;
+@total-width: 100%;
+
+.our-services .single-col {
+	.column(12);
+	@media @tablet {
+		.column(4);
+	}
+}
+
+.article .single-col {
+	.column(12);
+	@media @tablet {
+		.column(4);
+	}
+}
+
+
+.advantages .single-col {
+	.column(12);
+	@media @tablet {
+		.column(4);
+	}
+}
+
+.statistics .single-col {
+	.column(12);
+	@media @phone {
+		.column(6);
+	}
+	@media @tablet {
+		.column(3);
+	}
+}
+
+.our-team .single-col {
+	.column(12);
+	@media @tablet {
+		.column(4);
+	}
+}
+
+.footer-main .single-col {
+	.column(12);
+	@media @phone {
+		.column(6);
+	}
+	@media @tablet {
+		.column(3);
+	}
+}
+
+// kontener
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	clear: both;
+	padding: 0 15px;
+}
+
+// Inne elementy
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+// tytuly sekcji
+.section-title {
+	margin-bottom: 40px;
+	.center-text;
+}
+
+// Naglowki
+h1, h2 , h3 {
+	line-height: 1.1;
+} 
+
+// mixin dla przyciskow
+.basic-button(@color;@background-color) {
+	color: @color;
+	background-color: @background-color;
+	text-decoration: none;
+	.inline-block;
+	font-size: @basic-font-size;
+	font-weight: 400;
+	line-height: @basic-line-height;
+	text-transform: uppercase;
+}
+
+// glowny kontener 
+#main-container {
+	padding-top: 53px;
+}
+
+
+/***  Naglowek ***/
+header {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: @basic-background;
+	border-bottom: 1px solid @basic-border-color;
+	box-shadow: 0 0 1px @basic-border-color;
+	.navbar {
+		height: 63px;
+			.nav-logo {
+			.float-left;
+			.center-vertical;
+			z-index: 2;
+		}
+	}
+}
+
+// ukrywa menu glowne
+#main-menu {
+	.invisible;
+	@media @phone {
+		.block;
+	}
+}
+
+.main-menu-content {
+	.float-right;
+	.center-vertical;
+	ul {
+		.list-style-none;
+		li {
+			.float-left;
+			.block;
+			a {
+				color: @menu-link-color;
+				font-size: 15px;
+				font-family: @font-family-secondary;
+				font-weight: 400;
+				padding: 20px 14px;
+				line-height: 20px;
+				.basic-transition;
+				&:hover {
+					color: @accent-color;
+				}
+				@media @tablet {
+					padding: 20px 22px;
+				}
+			}
+			i {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+// menu mobilne
+.slicknav_menu {
+	position: fixed;
+	left: 0;
+	right: 0;
+	@media @phone {
+		.invisible;
+	}
+	i {
+		.invisible;
+	}
+	ul {
+		.section-border-bottom;
+		box-shadow: 0 0 1px @basic-border-color;
+	}
+}
+
+// glowny slider
+.bxslider {
+	.main-slide-1 {
+		background-image: url('../images/slider_1.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+	}
+	ul {
+		padding-left: 0px;
+	}
+	.main-slide-2 {
+		background-image: url('../images/slider_2.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+	}
+}
+
+// obrazki w sliderze
+.bx-viewport {
+	img {
+		.invisible;
+		@media @tablet {
+			.block;
+			position: absolute;
+			right: 10%;
+			top: 20%;
+		}
+	}
+}
+
+// zawartosc slajdu
+.main-slider-content {
+	padding: 15% 2%;
+	color: @brightest-text-color;
+	position: relative;
+	z-index: 1;
+	h1 {
+		font-size: 26px;
+		line-height: 33px;
+		font-weight: 400;
+		@media @tablet {
+			font-size: 48px;
+			line-height: 60px;
+		}
+	}
+	p {
+		font-size: 12px;
+		line-height: @basic-line-height;
+		@media @tablet {
+			font-size: 18px;
+		}
+	}
+	a {
+		position: relative;
+		.basic-button(@brightest-text-color;none);
+		margin: 8px 0;
+		padding: 12px 30px;
+		border: 1px solid @brightest-text-color;
+	}
+}
+
+// Nasze uslugi
+.our-services {
+	padding: 80px 0 60px;
+	.overflow-fix;
+	.single-col {
+		margin-bottom: 40px;
+		.center-text;
+		span {
+			.inline-block;
+			width: 100%;
+			background: @alternate-background;
+			.center-text;
+			
+			margin-bottom: 10px;
+			.basic-transition;
+			&:hover {
+				background: @accent-color;
+			}
+			&:hover > i {
+				color: @brightest-text-color;
+				cursor: default;
+			}
+			i {
+				color: @accent-color;
+				font-size: 30px;
+				line-height: 60px;
+			}
+		}
+
+		@media @tablet {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+//sekcja artykuly
+	.article h2{
+	text-transform: uppercase;
+	margin-left: 15px;
+	color: @basic-text-color;
+	font-weight: bold;
+	&:first-letter{
+			color: @accent-color;
+		}
+
+}
+.article .single-col{
+	a h3 {
+		color: @basic-text-color;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		&:first-letter{
+			color: @accent-color;
+		}
+		&:hover{
+				color: @accent-color;
+		}
+	}
+	a:hover{
+		text-decoration: none;
+	}
+	.readmore{
+			font-size: 14px;
+			color: @accent-color;
+		}
+	p{
+		text-align: justify;
+	}
+	.dark{
+		position: relative;
+		z-index: 0;
+		&:after{
+				content: "";
+				z-index: 0;
+				.absolute-one-hundred-size;
+				background: none repeat 0 0 rgba(30, 30, 30, 0.3);
+		}
+		&:hover{
+			&:after{
+				background: none repeat 0 0 rgba(30, 30, 30, 0);
+				.basic-transition;
+			}
+		}
+	}
+}
+
+
+// Portfolio
+.portfolio {
+	padding: 55px 0;
+	.section-border-top;
+	.owl-controls {
+		margin-top: 60px;
+	}
+}
+
+.portfolio-item {
+	width: 100%;
+	img {
+		width: 100%;
+		cursor: move;
+	}
+	&:hover .portfolio-hover {
+		opacity: 1;
+	}
+	&:hover h3 {
+		.translate3d(0%;0%;0%);
+	}
+	&:hover p {
+		.translate3d(0%;0%;0%);
+	}
+	&:hover a {
+		.translate3d(0%;0%;0%);
+	}   
+
+}
+
+.portfolio-hover {
+	.absolute-one-hundred-size;
+	.center-text;
+	.basic-transition;
+	overflow: hidden;
+	background-color: @box-portfolio-background;
+	opacity: 0;
+}
+
+.portfolio-hover-inner {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	h3 {
+		.header-mixin(18px;6px;@basic-background);
+		.translate3d(0%;-400%;0%);
+		.variable-transition(0.6s);
+	}
+	p {
+		color: @basic-background;
+		margin-bottom: 20px;
+		.translate3d(0%;-400%;0%);
+		.variable-transition(0.6s);
+
+	}
+	a {
+		.inline-block;
+		.size(40px;40px);
+		.border-radius-single(50%);
+		border: 1px solid @basic-background;
+		.center-text;
+		margin: 0 5px;
+		.translate3d(0%;400%;0%);
+		.basic-transition;
+		i {
+			line-height: 40px;
+			font-size: 14px;
+			color: @basic-background;
+			.basic-transition;
+		}
+		&:hover {
+			background-color: @basic-background;
+		}
+		&:hover i {
+			color: @accent-color;
+		}
+
+	}
+	a.portfolio-link-left {
+		.variable-transition(0.4s);
+	}
+	a.portfolio-link-right {
+		.variable-transition(0.6s);
+	}
+}
+
+// Sekcja ponizej portfolio
+.content-offer {
+	padding: 55px 0 0;
+	.section-border-top;
+	.center-text;
+}
+
+
+
+
+
+
+
+// Pasek ponizej naszego zespolu
+.section-video-text {
+	background-color: @accent-color;
+	padding: 50px 0;
+	.center-text;
+	h2 {
+		color: @brightest-text-color;
+		margin-bottom: 0;
+		a {
+			.basic-button(@brightest-text-color;@accent-color);
+			margin: 8px 0 8px 65px;
+			padding: 10px 30px;
+			border: 2px solid @brightest-text-color;
+			.border-radius-single(2px);
+			.basic-transition;
+			&:hover {
+				color: @accent-color;
+				background-color: @brightest-text-color;
+			}
+		}
+	}
+}
+
+// Sekcja Nasze zalety
+.advantages {
+	padding: 80px 0 20px;
+	.clearfix;
+	.single-col {
+		.center-text;
+		margin-bottom: 30px;
+		span {
+			.block;
+			.center-no-float;
+			margin-bottom: 20px;
+			margin-top: 20px;
+			i {
+				font-size: 30px;
+				color: @accent-color;
+			}
+			@media @tablet {
+				.inline-block;
+				.no-center-float;
+				margin-bottom: 0;
+			}
+		}
+		.services-content {
+			margin-left: 0;
+			@media @tablet {
+				margin-left: 80px;
+			}
+		}
+		@media @tablet {
+			text-align: left;
+		}
+	}
+}
+
+// Statystyki
+.statistics {
+	background-color: @alternate-background;
+	.overflow-fix;
+	padding: 80px 0 70px;
+	.single-col {
+		.center-text;
+		.statistics-content {
+			margin-bottom: 30px;
+			h3 {
+				font-size: 60px;
+				color: @accent-color;
+				margin: 0;
+			}
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+// Baner foto
+.photo-banner {
+	.center-text;
+	background: url('../images/foto_baner.jpg') fixed 0 0;
+	.photo-banner-inner {
+		position: relative;
+		z-index: 0;
+		&:after {
+			.dark-overlay;
+		}
+		.container {
+			position: relative;
+			z-index: 1;
+			padding: 175px 0;
+		}
+		h2 {
+			.header-mixin(48px;26px;@brightest-text-color);
+		}
+		a {
+			position: relative;
+			.basic-button(@brightest-text-color;@accent-color);
+			margin: 8px 0;
+			padding: 12px 30px;
+			.basic-transition;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}
+
+// Nasz zespol
+.our-team {
+	padding: 55px 0 10px;
+	.center-text;
+	.section-border-bottom;
+	.overflow-fix;
+	.single-col {
+		margin-bottom: 30px;
+	}
+}
+
+.team-members {
+	.overflow-fix;
+	margin-bottom: 40px;
+}
+
+
+.team-member {
+	.center-text;
+	img.first{
+		margin-bottom: 30px;
+		width: 100%;
+		position: relative;
+		display: block;
+	}
+	img.second{
+		margin-bottom: 30px;
+		position: relative;
+		width: 100%;
+		display: block;
+	}
+	h3 {
+		.header-mixin(18px;4px);
+	}
+	span {
+		line-height: 24px;
+		margin: 0 0 17px;
+		.inline-block;
+	}
+	p {
+		margin-bottom: 20px;
+	}
+}
+
+.members-social {
+	.list-style-none;
+	li {
+		.inline-block;
+		margin-right: 18px;
+		i {
+			font-size: 18px;
+			color: darken(@alternate-background, 20%);
+			.basic-transition;
+			&:hover {
+				color: darken(@alternate-background, 10%);
+			}
+		}
+	}
+}
+
+// Sekcja opinie
+.opinions {
+	padding: 70px 0 30px;
+	ul {
+		padding: 0;
+	}
+}
+
+.opinions-content {
+	.center-text;
+	font-size: 18px;
+	padding-bottom: 40px;
+	p {
+		line-height: 30px;
+		font-style: italic;
+		color: @opinions-text;
+		margin-bottom: 25px;
+	}
+	h3 {
+		.center-text;
+		margin: 0 0 18px;
+	}
+}
+
+// fix dla slidera
+.bx-viewport {
+	min-height: 130px;
+}
+
+// Stopka
+// stopka - ogolne
+footer {
+	background-color: @footer-background;
+	color: @bright-text-color;
+	ul {
+		.list-style-none;
+	}
+}
+.footer-main {
+	padding: 84px 0 65px;
+	.overflow-fix;
+	h3 {
+		.header-mixin(18px;30px;@brightest-text-color);
+	}
+	.single-col {
+		margin-bottom: 30px;
+		@media @tablet {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// stopka - o nas
+.footer-social {
+	li {
+		.inline-block;
+		margin-right: 9px;
+		margin-bottom: 3px;
+		a {
+			.inline-block;
+			.size(30px;30px);
+			border: 1px solid @footer-social-borders;
+			.border-radius-single(4px);
+			.center-text;
+			text-decoration: none;
+			.basic-transition;
+			&:hover {
+				background-color: @footer-social-borders;
+			}
+			i {
+				font-size: 14px;
+				color: @footer-social-icons;
+				line-height: 28px;
+			}
+
+		}
+	}
+}
+
+// stopka - nasz blog
+.our-blog {
+	ul {
+		li {
+			padding-top: 15px;
+			border-top: 1px solid @footer-social-borders;
+			&:first-child {
+				padding-top: 0;
+				border-top: none;
+			}
+		}
+		h4 {
+			margin: 0;
+			font-size: 13px;
+			a {
+				color: @bright-text-color;
+				font-weight: 400;
+				.basic-transition;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		} 
+	}
+}
+
+.post-date {
+	line-height: @basic-line-height;
+	margin: 0 0 10px;
+	color: @footer-post-date;
+	font-size: 12px;
+	.inline-block;
+}
+
+// Stopka - galeria
+.footer-gallery {
+	ul {
+		li {
+			.inline-block;
+			margin-right: 2px;
+			margin-bottom: 6px;
+			img {
+				width: 80px;
+			}
+			a {
+				.basic-transition;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}
+
+// Stopka - linki
+.more-links {
+	li {
+		.block;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid @footer-social-borders;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	a {
+		color: @bright-text-color;
+		line-height: @basic-line-height;
+		.basic-transition;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Stopka - copyright
+.copyright {
+	padding: 20px 0;
+	background-color: @footer-copyright-background;
+	border-top: 1px solid @footer-social-borders;
+	p {
+		font-size: 12px;
+		color: @basic-text-color;
+		margin: 0;
+		a {
+			color: @bright-text-color;
+		}
+	}
+}
+
+
+
+
+
+
+
+//*****************************************************************************************************
+//*****************************************************************************************************
+//***************OWL***********************************************************************
+//*****************************************************************************************************
+
+
+
+//*****************************************************************************************************
+//*****************************************************************************************************
+//***************SLICKNAV***********************************************************************
+//*****************************************************************************************************
+

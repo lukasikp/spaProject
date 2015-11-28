@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<title>Projekt</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Fonty Google -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<!-- bxSlider CSS file -->
+	<link href="public/style/jquery.bxslider.css" rel="stylesheet" />
+	<!-- owl slider-->
+	<!-- <link href="owl-carousel/owl.carousel.css" rel="stylesheet" /> -->
+	<!-- Animate CSS-->
+	<link href="public/style/animate.css" rel="stylesheet" />
+
+	<!-- Style CSS/ skompilowane z LESS -->
+	<link rel="stylesheet" href="public/style/style.css" type="text/css">
+
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<!-- mobilne menu -->
+	<script src="public/js/jquery.slicknav.min.js"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="public/js/jquery.bxslider.min.js"></script>
+	<!-- Ladowanie obrazkow -->
+	<script src="public/js/imagesloaded.pkgd.min.js"></script>
+	<!-- owl slider -->
+	<script src="public/js/owl-carousel/owl.carousel.min.js"></script>
+	<!-- Odliczanie -->
+	<script src="public/js/jquery.countTo.js"></script>
+	<!-- Viewport Checker -->
+	<script src="public/js/jquery.viewportchecker.js"></script>
+	<!-- YTPlayer -->
+	<script src="public/js/jquery.mb.YTPlayer.min.js"></script>
+	<!-- Script -->
+	<script src="public/js/script.js"></script>
+
+</head>
+<body>
+
+	<!-- glowny kontener -->
+	<div id="main-container">
+
+		<!-- Nawigacja -->
+		<header>
+			<nav>
+				<div class="container">
+					<div class="navbar">
+						<div class="nav-logo">
+							<a href=""><img src="public/images/logo.png" alt="logo"></a>
+						</div>
+						<div class="main-menu-content">
+							<ul id="main-menu">
+								<li><a href="" class="menu-link-active">Start</a></li>
+								<li><a href="">Usługi</a></li>
+								<li><a href="">Portfolio</a></li>
+								<li><a href="">O nas</a></li>
+								<li><a href="">Współpraca</a></li>
+								<li><a href="">Kontakt</a></li>
+								<li><a href=""><i class="fa fa-search"></i></a></li>
+							</ul>
+						</div>
+						<!-- menu mobilne -->
+						<div id="attach-mobile-menu">
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Slider -->
+		<div class="top-slider">
+			<ul class="bxslider" id="main-slider">
+				<li>
+					<div class="main-slide-1">
+						<div class="container">
+							<div class="main-slider-content">
+								<h1 class="animated fadeInDown">W pełni responsywny projekt</h1>
+								<p class="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<a href="" class="animated fadeInUp">Zobacz</a>
+								<img src="public/images/slider_1_phone.png" alt="" class="animated fadeInDown">
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="main-slide-2">
+						<div class="container">
+							<div class="main-slider-content">
+								<h1 class="animated fadeInDown">Oparty na LESS</h1>
+								<p class="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<a href="" class="animated fadeInUp">Zobacz</a>
+								<img src="public/images/slider_2_tablet.png" alt="" class="animated fadeInDown">
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Sekcja nasze uslugi -->
+		<div class="our-services">
+			<div class="container">
+				<div class="single-col" data-animate="fadeInLeft">
+					<span><i class="fa fa-line-chart"></i></span>
+					<h3>SEO</h3>
+					<p>Aenean sed justo tincidunt, vulputate nisi si amet, rutrum ligula. Pellentesque dictum uam ornare. Sed elit le rut.</p>
+				</div>
+				<div class="single-col" data-animate="fadeInUp">
+					<span><i class="fa fa-wifi"></i></span>
+					<h3>Projektowanie stron</h3>
+					<p>Aenean sed justo tincidunt, vulputate nisi si amet, rutrum ligula. Pellentesque dictum uam ornare. Sed elit le rut.</p>
+				</div>
+				<div class="single-col" data-animate="fadeInUp">
+					<span><i class="fa fa-mobile"></i></span>
+					<h3>Aplikacje mobilne</h3>
+					<p>Aenean sed justo tincidunt, vulputate nisi si amet, rutrum ligula. Pellentesque dictum uam ornare. Sed elit le rut.</p>
+				</div>
+				<div class="single-col" data-animate="fadeInUp">
+					<span><i class="fa fa-envelope"></i></span>
+					<h3>Programowanie</h3>
+					<p>Aenean sed justo tincidunt, vulputate nisi si amet, rutrum ligula. Pellentesque dictum uam ornare. Sed elit le rut.</p>
+				</div>
+				<div class="single-col" data-animate="fadeInUp">
+					<span><i class="fa fa-server"></i></span>
+					<h3>Domeny, serwery</h3>
+					<p>Aenean sed justo tincidunt, vulputate nisi si amet, rutrum ligula. Pellentesque dictum uam ornare. Sed elit le rut.</p>
+				</div>
+				<div class="single-col" data-animate="fadeInRight">
+					<span><i class="fa fa-line-chart"></i></span>
+					<h3>Inne usługi</h3>
+					<p>Aenean sed justo tincidunt, vulputate nisi si amet, rutrum ligula. Pellentesque dictum uam ornare. Sed elit le rut.</p>
+				</div>
+			</div>
+		</div>
+
+		
+		<!-- Sekcja article -->
+		<div class="article">
+			<div class="container">
+				<h2> Artykuły </h2>
+				<div class="single-col">
+						<a href="#"><h3>HTML5 nowości</h3>
+						<div class="dark">
+						<img src="public/images/article2.jpg">
+						</div>
+						</a>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<a href="#"><h3 class="readmore">Read more</h3></a>
+				</div>
+				<div class="single-col">
+						<a href="#"><h3>Projektowanie stron</h3>
+						<div class="dark">
+						<img src="public/images/article1.jpg">
+						</div>
+						</a>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<a href="#"><h3 class="readmore">Read more</h3></a>
+				</div>
+				<div class="single-col">
+						<a href="#">
+						<h3>HTML5 nowości</h3>
+						<div class="dark">
+						<img src="public/images/article3.jpg">
+						</div>
+						</a>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<a href="#"><h3 class="readmore">Read more</h3></a>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- pasek ponizej nasz zespol -->
+		<div class="section-video-text">
+			<div class="container">
+				<h2>Kliknij aby skontaktować się z nami 
+					<a href="#" class="button">Kliknij tutaj</a>
+				</h2>
+			</div>
+		</div>
+
+		<!-- Sekcja Nasze zalety -->
+		<div class="advantages">
+			<div class="section-title">
+				<div class="container" data-animate="bounceIn">
+					<h2>Dlaczego warto skorzystać z naszych usług</h2>
+					<p>Vestibulum accumsan auctor diam id aliquam. Sed at eros vitae nulla dictum convallis sit amet vel nibh</p>
+				</div>
+			</div>
+			<!-- wlasciwa tresc -->
+			<div class="advantages-content">
+				<div class="container">
+					<!-- zalety - jeden element -->
+					<div class="single-col" data-animate="fadeInLeft">
+						<span><i class="fa fa-male"></i></span>
+						<div class="services-content">
+							<h3>Doświadczony zespół</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas nisl.</p>
+						</div>
+					</div>
+					<!-- zalety - jeden element -->
+					<div class="single-col" data-animate="fadeInUp">
+						<span><i class="fa fa-css3"></i></span>
+						<div class="services-content">
+							<h3>Nowoczesne technologie</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas nisl.</p>
+						</div>
+					</div>
+					<!-- zalety - jeden element -->
+					<div class="single-col" data-animate="fadeInRight">
+						<span><i class="fa fa-line-chart"></i></span>
+						<div class="services-content">
+							<h3>5 lat na rynku</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas nisl.</p>
+						</div>
+					</div>
+					<!-- zalety - jeden element -->
+					<div class="single-col" data-animate="fadeInLeft">
+						<span><i class="fa fa-bookmark-o"></i></span>
+						<div class="services-content">
+							<h3>Najlepsze rozwiązania</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas nisl.</p>
+						</div>
+					</div>
+					<!-- zalety - jeden element -->
+					<div class="single-col" data-animate="fadeInUp">
+						<span><i class="fa fa-external-link"></i></span>
+						<div class="services-content">
+							<h3>Lepsze rozwiązania</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas nisl.</p>
+						</div>
+					</div>
+					<!-- zalety - jeden element -->
+					<div class="single-col" data-animate="fadeInRight">
+						<span><i class="fa fa-calculator"></i></span>
+						<div class="services-content">
+							<h3>Doświadczony zespół</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas nisl.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Sekcja statystyki -->
+		<div class="statistics">
+			<div class="container">
+				<div class="statistics-single-item single-col">
+					<div class="statistics-content">
+						<h3><span class="timer" data-from="0" data-to="8000" data-speed="3000"></span></h3>
+						<p>Zadowolonych klientów</p>
+					</div>
+				</div>
+				<div class="statistics-single-item single-col">
+					<div class="statistics-content">
+						<h3><span class="timer" data-from="0" data-to="356" data-speed="3000"></span></h3>
+						<p>Zrealizowanych projektów</p>
+					</div>
+				</div>
+				<div class="statistics-single-item single-col">
+					<div class="statistics-content">
+						<h3><span class="timer" data-from="0" data-to="6" data-speed="3000"></span></h3>
+						<p>Lat działalności</p>
+					</div>
+				</div>
+				<div class="statistics-single-item single-col">
+					<div class="statistics-content">
+						<h3><span class="timer" data-from="0" data-to="128" data-speed="3000"></span></h3>
+						<p>Innych ważnych rzeczy</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Sekcja paralax -->
+		<div class="photo-banner">
+			<div class="photo-banner-inner">
+				<div class="container" data-animate="bounceIn">
+					<h2>Nasze projekty</h2>
+					<a href="#" class="button">Zobacz</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Sekcja nasz zespol -->
+		<div class="our-team">
+			<div class="container" data-animate="bounceIn">
+				<div class="section-title">
+					<h2>Nasz zespół</h2>
+					<p>Vestibulum accumsan auctor diam id aliquam. Sed at eros vitae nulla dictum convallis sit amet vel nibh</p>
+				</div>
+				<div class="team-members">
+					<!-- jedna osoba -->
+					<div class="team-member single-col">
+						<div class="imgteam">
+							<img class="first" src="public/images/boy1.jpg" alt="">
+							<img class="second" src="public/images/boy2.jpg" alt="">
+						</div>
+						<div>
+							<h3>Lorem Ipsum</h3>
+							<span>Programista</span>
+							<p>Vestibulum accumsan Vestibulum accumsan auctor diam Vestibullum ante ipsum primis ipsum primis in faucib aliquam. Sed at eros vitae null.</p>
+							<ul class="members-social">
+								<li><a href="" class="facebook"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="" class="googleplus"><i class="fa fa-google-plus"></i></i></a></li>
+								<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- jedna osoba -->
+					<div class="team-member single-col">
+						<img class="first" src="public/images/girl1.jpg" alt="">
+						<img class="second" src="public/images/girl2.jpg" alt="">
+						<div>
+							<h3>Lorem Ipsum</h3>
+							<span>Programista</span>
+							<p>Vestibulum accumsan Vestibulum accumsan auctor diam Vestibullum ante ipsum primis ipsum primis in faucib aliquam. Sed at eros vitae null.</p>
+							<ul class="members-social">
+								<li><a href="" class="facebook"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="" class="googleplus"><i class="fa fa-google-plus"></i></i></a></li>
+								<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- jedna osoba -->
+					<div class="team-member single-col">
+						<img class="first" src="public/images/boy1.jpg" alt="">
+						<img class="second" src="public/images/boy2.jpg" alt="">
+						<div>
+							<h3>Lorem Ipsum</h3>
+							<span>Programista</span>
+							<p>Vestibulum accumsan Vestibulum accumsan auctor diam Vestibullum ante ipsum primis ipsum primis in faucib aliquam. Sed at eros vitae null.</p>
+							<ul class="members-social">
+								<li><a href="" class="facebook"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="" class="googleplus"><i class="fa fa-google-plus"></i></i></a></li>
+								<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Slider opinie -->
+		<div class="opinions">
+			<div class="container">
+				<div class="section-title" data-animate="bounceIn">
+					<h2>Dlaczego warto skorzystać z naszych usług</h2>
+					<p>Vestibulum accumsan auctor diam id aliquam. Sed at eros vitae nulla dictum convallis sit amet vel nibh</p>
+				</div>
+				<div class="opinions-content" data-animate="fadeIn">
+					<ul class="bxslider" id="opinions-slider">
+						<li>
+							<p>Vestibulum ante ipsum primis in lum ante ipsum primis in faucibus orci orci lum ante luctus et ultrices posuere cubilia Curae; Donec alit urna scelerisque ac.</p>
+							<h3>Tadeusz Pierwszy</h3>
+						</li>
+						<li>
+							<p>Vestibulum ante ipsum primis in lum ante ipsum primis in faucibus orci orci lum ante luctus et ultrices posuere cubilia Curae; Donec alit urna scelerisque ac.</p>
+							<h3>Tadeusz Drugi</h3>
+						</li>
+						<li>
+							<p>Vestibulum ante ipsum primis in lum ante ipsum primis in faucibus orci orci lum ante luctus et ultrices posuere cubilia Curae; Donec alit urna scelerisque ac.</p>
+							<h3>Tadeusz Trzeci</h3>
+						</li>
+						<li>
+							<p>Vestibulum ante ipsum primis in lum ante ipsum primis in faucibus orci orci lum ante luctus et ultrices posuere cubilia Curae; Donec alit urna scelerisque ac.</p>
+							<h3>Tadeusz Czwarty</h3>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Stopka -->
+		<footer>
+			<div class="footer-main">
+				<div class="container">
+					<!-- Social -->
+					<div class="single-col">
+						<h3>O nas</h3>
+						<p>In hac habitasse platea dictumst. Duis consequat augue dui, non cursus justo commodo sed.</p>
+						<ul class="footer-social">
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						</ul>
+					</div>
+					<!-- Nasz blog -->
+					<div class="single-col our-blog">
+						<h3>Nasz blog</h3>
+						<ul>
+							<li>
+								<h4><a href="">Uis consequat augue dui nonm non.</a></h4>
+								<span class="post-date">18 luty 2015</span>
+							</li>
+							<li>
+								<h4><a href="">Uis consequat augue augue dui non.</a></h4>
+								<span class="post-date">2 Styczeń 2015</span>
+							</li>
+							<li>
+								<h4><a href="">Uis consequat augue dui abejnon.</a></h4>
+								<span class="post-date">3 Maj 2014</span>
+							</li>
+						</ul>
+					</div>
+					<!-- Galeria -->
+					<div class="single-col footer-gallery">
+						<h3>Galeria</h3>
+						<ul>
+							<li><a href="#"><img src="public/images/galeria/1.jpg" alt=""></a></li>
+							<li><a href="#"><img src="public/images/galeria/2.jpg" alt=""></a></li>
+							<li><a href="#"><img src="public/images/galeria/3.jpg" alt=""></a></li>
+							<li><a href="#"><img src="public/images/galeria/4.jpg" alt=""></a></li>
+							<li><a href="#"><img src="public/images/galeria/2.jpg" alt=""></a></li>
+							<li><a href="#"><img src="public/images/galeria/1.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					<!-- Linki -->
+					<div class="single-col more-links">
+						<h3>Linki</h3>
+						<ul>
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Google</a></li>
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">Inne</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</footer>
+
+	</div>
+	<script>
+	$(document).ready(function(){
+		/* menu mobilne */
+		$('#main-menu').slicknav({
+			prependTo: '#attach-mobile-menu',
+			label: ''
+		});
+		/* odliczanie */
+		$('.timer').countTo();
+		/* viewport */
+		/*$('*[data-animate]').addClass('hide').each(function(){
+			$(this).viewportChecker({
+				classToAdd: 'show animated ' + $(this).data('animate'),
+				classToRemove: 'hide',
+				offset: 200
+			});
+		});*/
+		/* YTPlayer */
+		$('.player').YTPlayer();
+	});
+	$('#main-container').imagesLoaded(function(){
+		/* glowny slider */
+		$('#main-slider').bxSlider({
+			mode: 'fade',
+			auto: true,
+			controls: true,
+			pager: false
+		});
+		/* Slider opinie */
+		$('#opinions-slider').bxSlider({
+			mode: 'vertical',
+			auto: true,
+			controls: false,
+			pager: false
+		});
+		$('#portfolio-carousel').owlCarousel({
+			autoPlay: 10000,
+			items: 3,
+			itemsDesktopSmall: [1199,2],
+			itemsTablet: [768,1]
+		});
+	});
+	</script>
+</body>
+</html>
